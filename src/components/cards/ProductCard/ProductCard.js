@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from './ProductCard.styles';
 
-export default function ProductCard({item, onSelect}) {
+const ProductCard = ({item, onSelect}) => {
   return (
     <TouchableWithoutFeedback onPress={onSelect}>
       <ImageBackground
@@ -24,4 +24,6 @@ export default function ProductCard({item, onSelect}) {
       </ImageBackground>
     </TouchableWithoutFeedback>
   );
-}
+};
+
+export default ProductCard;
