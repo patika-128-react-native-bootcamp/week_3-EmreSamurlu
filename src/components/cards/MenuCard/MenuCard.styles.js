@@ -1,27 +1,31 @@
 import {Dimensions, StyleSheet} from 'react-native';
 
+import radius from '../../../styles/radius';
+import spacing from '../../../styles/spacing';
+import color from '../../../styles/color';
+
 const deviceSize = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
-    margin: 10,
+    margin: spacing.normal,
     borderWidth: 1,
-    borderColor: '#bdbdbd',
-    borderRadius: 3,
+    borderColor: color.secondary,
+    borderRadius: radius.sharp,
   },
   image: {
-    backgroundColor: '#bdbdbd',
+    backgroundColor: color.secondary,
     height: deviceSize.height / 6,
   },
   name_label: {
     fontWeight: 'bold',
-    margin: 5,
+    margin: spacing.tiny,
   },
   add_button_container: {
-    bottom: 15,
-    right: 5,
-    borderRadius: 20,
+    bottom: spacing.large,
+    right: spacing.tiny,
+    borderRadius: radius.curved,
     position: 'absolute',
-    backgroundColor: '#039be5',
+    backgroundColor: color.background,
   },
 });
