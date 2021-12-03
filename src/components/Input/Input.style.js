@@ -1,4 +1,6 @@
 import {StyleSheet} from 'react-native';
+
+import color from '../../styles/color';
 import spacing from '../../styles/spacing';
 import radius from '../../styles/radius';
 
@@ -7,13 +9,13 @@ export default StyleSheet.create({
     margin: spacing.large,
   },
   input_container: {
-    backgroundColor: '#e0e0e0',
+    backgroundColor: color.grey,
     padding: spacing.normal,
     borderRadius: radius.sharp,
     borderWidth: 1,
-    borderColor: '#bdbdbd',
+    borderColor: color.secondary,
   },
   label: {
-    color: '#8d8d8d',
+    color: color.darkgrey,
   },
 });
