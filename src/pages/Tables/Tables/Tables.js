@@ -29,7 +29,7 @@ export default function Table() {
     const newTables = [...tables];
     newTables[updatedTableIndex] = updatedTable;
     setTables(newTables);
-  }, [route.params]);
+  }, [route.params, tables]);
 
   return (
     <SafeAreaView style={styles.container}>
