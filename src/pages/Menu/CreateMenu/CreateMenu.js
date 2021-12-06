@@ -24,12 +24,10 @@ export default function CreateMenu() {
   };
 
   function handleNavigateDetail() {
-    navigation.navigate('MenuDetailPage', {foodDetail});
-  }
-
-  function checkInput() {
     if (!name || !description || !ingredients || !price) {
       return Alert.alert('Error', 'Inputs Cannot Be Empty');
+    } else {
+      navigation.navigate('MenuDetailPage', {foodDetail});
     }
   }
 
@@ -46,7 +44,7 @@ export default function CreateMenu() {
         onChangeText={value => setIngredients(value)}
       />
       <Input label="Price" onChangeText={value => setPrice(value)} />
-      <Button title="Apply Food" onPress={(handleNavigateDetail, checkInput)} />
+      <Button title="Apply Food" onPress={handleNavigateDetail} />
     </SafeAreaView>
   );
 }

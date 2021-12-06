@@ -116,7 +116,7 @@
       "id": 1,
       "name": "SALOON 2",
       "orders": [],
-      "isActive": true
+      "isActive": false
     },
     {
       "id": 2,

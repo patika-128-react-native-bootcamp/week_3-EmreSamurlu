@@ -8,7 +8,7 @@ export default function MenuCard({item, onSelect}) {
   const tableColor = item.isActive ? 'green' : color.secondary;
 
   return (
-    <TouchableWithoutFeedback onPress={onSelect} disabled={!item.isActive}>
+    <TouchableWithoutFeedback onPress={onSelect}>
       <View style={[styles.container, {borderColor: tableColor}]}>
         <View style={styles.image}>
           {item.orders.map((order, i) => (

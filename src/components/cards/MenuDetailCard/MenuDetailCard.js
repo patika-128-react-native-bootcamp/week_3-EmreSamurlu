@@ -8,9 +8,9 @@ const MenuDetailCard = () => {
   const route = useRoute();
   const {foodDetail} = route.params;
 
-  const renderIngredients = item => {
+  const renderIngredients = (item, index) => {
     return (
-      <View style={styles.badge_container}>
+      <View style={styles.badge_container} key={`${item}/${index}`}>
         <Text style={styles.badge_label}>{item}</Text>
       </View>
     );
