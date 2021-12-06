@@ -11,14 +11,13 @@ export default function Products() {
     navigation.navigate('PrdctDtlPage', {product: selectedProduct});
   }
 
+  const renderProductCard = ({item}) => (
+    <ProductCard item={item} onSelect={() => navigate(item)} />
+  );
+
   return (
     <SafeAreaView>
-      <FlatList
-        data={mockData.products}
-        renderItem={({item}) => (
-          <ProductCard item={item} onSelect={() => navigate(item)} />
-        )}
-      />
+      <FlatList data={mockData.products} renderItem={renderProductCard} />
     </SafeAreaView>
   );
 }
