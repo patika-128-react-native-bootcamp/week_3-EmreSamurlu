@@ -6,6 +6,7 @@ import MenuStack from './MenuStack';
 import TableStack from './TableStack';
 import ProductsStack from './ProductsStack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import routes from './routes';
 
 const Drawer = createDrawerNavigator();
 
@@ -14,7 +15,7 @@ export default function Navigation() {
     <NavigationContainer>
       <Drawer.Navigator screenOptions={{headerShown: false}}>
         <Drawer.Screen
-          name="ProductsStack"
+          name={routes.PRODUCTS_STACK}
           component={ProductsStack}
           options={{
             drawerLabel: 'Products',
@@ -25,7 +26,7 @@ export default function Navigation() {
           }}
         />
         <Drawer.Screen
-          name="MenuStack"
+          name={routes.MENU_STACK}
           component={MenuStack}
           options={{
             drawerLabel: 'Menu',
@@ -36,7 +37,7 @@ export default function Navigation() {
           }}
         />
         <Drawer.Screen
-          name="TableStack"
+          name={routes.TABLE_STACK}
           component={TableStack}
           options={{
             drawerLabel: 'Tables',

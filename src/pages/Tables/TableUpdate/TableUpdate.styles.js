@@ -12,18 +12,6 @@ export default StyleSheet.create({
     color: 'black',
     fontSize: 20,
   },
-  order_container: {
-    margin: 5,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  order_name: {
-    fontSize: 15,
-  },
-  order_price: {
-    fontWeight: 'bold',
-    fontSize: 12,
-  },
   total: {
     fontSize: 25,
     fontWeight: 'bold',

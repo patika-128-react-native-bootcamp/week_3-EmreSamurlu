@@ -6,12 +6,13 @@ import styles from './Menu.styles';
 import MenuCard from '../../../components/cards/MenuCard';
 
 import mockData from '../../../MOCK_DATA.json';
+import routes from '../../../navigation/routes';
 
 export default function Menu() {
   const navigation = useNavigation();
 
   function handleNavigateMenuCreate(selectedMenu) {
-    navigation.navigate('CreateMenuPage', {menu: selectedMenu});
+    navigation.navigate(routes.CREATE_MENU_PAGE, {menu: selectedMenu});
   }
 
   const renderMenu = ({item}) => (
@@ -19,12 +20,8 @@ export default function Menu() {
   );
 
   return (
-    <View style={styles.container}>
-      <SafeAreaView style={styles.container}>
-        <View>
-          <FlatList data={mockData.menu} renderItem={renderMenu} />
-        </View>
-      </SafeAreaView>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <FlatList data={mockData.menu} renderItem={renderMenu} />
+    </SafeAreaView>
   );
 }
