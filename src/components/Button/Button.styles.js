@@ -1,6 +1,8 @@
 import {StyleSheet} from 'react-native';
+
 import spacing from '../../styles/spacing';
 import radius from '../../styles/radius';
+import color from '../../styles/color';
 
 const base_styles = StyleSheet.create({
   container: {
@@ -19,7 +21,7 @@ export default {
   default: StyleSheet.create({
     container: {
       ...base_styles.container,
-      backgroundColor: '#37474f',
+      backgroundColor: color.primary,
     },
     text: {
       ...base_styles.text,
@@ -29,13 +31,13 @@ export default {
 
   outline: StyleSheet.create({
     container: {
-      borderWidth: 1,
-      borderRadius: '#37474f',
       ...base_styles.container,
+      borderWidth: 1,
+      borderRadius: color.primary,
     },
     text: {
       ...base_styles.text,
-      color: '#37474f',
+      color: color.primary,
     },
   }),
 };

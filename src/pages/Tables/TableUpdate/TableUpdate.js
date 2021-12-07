@@ -1,39 +1,34 @@
 import {useNavigation, useRoute} from '@react-navigation/core';
 import React from 'react';
-import {SafeAreaView, View, Text} from 'react-native';
+import {SafeAreaView, View, Text, FlatList} from 'react-native';
 import Button from '../../../components/Button';
 
 import styles from './TableUpdate.styles';
-
-const mapOrders = (order, i) => (
-  <View key={i} style={styles.order_container}>
-    <Text style={styles.order_name}>⏺ {order.name}</Text>
-    <Text key={i} style={styles.order_price}>
-      {order.price} TL
-    </Text>
-  </View>
-);
+import routes from '../../../navigation/routes';
+import MapOrders from '../../../components/Order';
 
 export default function TableUpdate() {
   const navigation = useNavigation();
   const route = useRoute();
   const {table} = route.params;
 
-  const {price: total} = table.orders.reduce((p, c) => ({
-    price: p.price + c.price,
-  }));
+  const total = table.orders.reduce((prev, cur) => prev + cur.price, 0);
 
   function handleCloseTable() {
-    navigation.navigate('TablesPage', {
+    navigation.navigate(routes.TABLES_PAGE, {
       updatedTable: {...table, isActive: false},
     });
   }
+
+  const renderOrders = ({item}) => (
+    <MapOrders name={item.name} price={item.price} />
+  );
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <Text style={styles.name_label}>{table.name}</Text>
-        {table.orders.map(mapOrders)}
+        <FlatList data={table.orders} renderItem={renderOrders} />
         <Text style={styles.total}>Total {total} TL</Text>
       </View>
       {table.isActive && (

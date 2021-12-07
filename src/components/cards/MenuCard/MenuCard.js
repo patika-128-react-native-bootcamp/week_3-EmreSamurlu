@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from './MenuCard.styles';
 
-export default function MenuCard({item, onSelect}) {
+const MenuCard = ({item, onSelect}) => {
   return (
     <TouchableWithoutFeedback onPress={onSelect}>
       <View style={styles.container}>
@@ -16,4 +16,6 @@ export default function MenuCard({item, onSelect}) {
       </View>
     </TouchableWithoutFeedback>
   );
-}
+};
+
+export default MenuCard;

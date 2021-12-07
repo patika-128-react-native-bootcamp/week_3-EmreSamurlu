@@ -1,16 +1,19 @@
 import {Dimensions, StyleSheet} from 'react-native';
 
+import color from '../../../styles/color';
+import spacing from '../../../styles/spacing';
+
 const deviceSize = Dimensions.get('window');
 
 export default StyleSheet.create({
   image: {
-    backgroundColor: '#bdbdbd',
+    backgroundColor: color.secondary,
     height: deviceSize.height / 5,
     alignItems: 'flex-end',
     flexDirection: 'row',
   },
   name_label: {
-    margin: 5,
+    margin: spacing.tiny,
     fontSize: 25,
     color: 'white',
     fontWeight: '200',
